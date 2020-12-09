@@ -1,0 +1,134 @@
+body {
+  display: block;
+  margin: 0 auto;
+}
+
+img {
+  width: 350px;
+  position: relative;
+  top: 20px;
+  right: 0;
+  bottom: 0px;
+  left: 758px;
+}
+h1,
+h2,
+h3 {
+  font-family: "Architects Daughter", cursive;
+  color: #b97272;
+}
+h1 {
+  text-align: center;
+  position: relative;
+  top: -35px;
+}
+h2 {
+  font-size: 50px;
+  margin: 0;
+}
+h3 {
+  text-align: center;
+}
+
+p {
+  font-weight: 500;
+}
+li {
+  list-style: none;
+}
+
+ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+ul,
+:placeholder-shown {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  padding: 10px;
+}
+
+i {
+  color: #fccbcb;
+}
+
+form {
+  background: transparent;
+}
+.temperature {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #2e2727;
+  font-size: 80px;
+  text-align: right;
+}
+
+.weatherCharacteristics {
+  text-align: left;
+  margin-left: 100px;
+  letter-spacing: 1px;
+}
+
+:placeholder-shown {
+  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid #fccbcb;
+}
+
+.weatherApp {
+  display: block;
+  margin: 0;
+  border: 2px solid #fccbcb;
+  border-radius: 250px 5px 250px 5px;
+  padding: 100px;
+  box-shadow: 5px 5px 6px #ad9d9d52;
+}
+.searchBar {
+  position: relative;
+  top: -75px;
+  bottom: 0;
+  left: 700px;
+}
+
+.buttons {
+  background: #fff;
+  border: 1.5px solid #fccbcb;
+  color: #b97272;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  background: #ad9d9d52;
+  transition: all 200ms ease-in-out;
+}
+
+.locationButton {
+  padding: 10px 15px;
+}
+
+.fa-map-marker-alt {
+  color: #b97272;
+}
+
+.current-location,
+.weather-feature {
+  position: relative;
+  top: -20px;
+  display: inline;
+  line-height: 20px;
+  font-style: italic;
+}
+
+.city-name {
+  font-style: normal;
+  margin: 10px;
+}
+
+.coder {
+  text-align: center;
+  padding: 20px;
+}
