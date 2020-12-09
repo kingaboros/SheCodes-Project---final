@@ -65,6 +65,12 @@ form {
   text-align: right;
 }
 
+.temperature .units {
+  position: relative;
+  font-size: 20px;
+  top: -43px;
+}
+
 .weather-characteristics {
   text-align: left;
   margin-left: 100px;
