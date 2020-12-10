@@ -45,7 +45,7 @@ let now = new Date();
 
 currentDate.innerHTML = showDate(now);
 
-// Search bar
+// Search bar & Displaying current weather
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
@@ -76,7 +76,7 @@ function searchBar(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchBar);
 
-// location button
+// Location button
 function searchLocation(position) {
   let apiKey = "50a2cd96751f0c33cc1da997a8fb13b2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -91,7 +91,7 @@ function showCurrentWeather(event) {
 let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", showCurrentWeather);
 
-// fahrenheit & celsius buttons
+// Fahrenheit & Celsius buttons
 
 function showFahrenheit(event) {
   event.preventDefault();
@@ -115,4 +115,5 @@ function showCelsius(event) {
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
+// Onload location
 search("London");
