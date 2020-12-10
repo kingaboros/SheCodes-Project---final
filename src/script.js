@@ -26,18 +26,17 @@ function formatDate(timestamp) {
 
 // Search bar & Displaying current weather
 function displayWeather(response) {
-  document.querySelector("#city-name").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#weather-feature");
-  temperatureElement.innerHTML = temperature;
-
   let dateElement = document.querySelector("#date");
+
+  temperatureElement.innerHTML = temperature;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
+  document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
-
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
