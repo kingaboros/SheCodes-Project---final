@@ -1,7 +1,6 @@
-//Display current time and date
-
-function showDate(date) {
-  let dates = date.getDate();
+//Display current date
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -10,40 +9,20 @@ function showDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let year = date.getFullYear();
   let days = [
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
-    "Thusday",
+    "Thursday",
     "Friday",
     "Saturday",
   ];
+
   let day = days[date.getDay()];
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let month = months[date.getMonth()];
 
-  return `${day}, ${dates} ${month} ${year}, ${hours}:${minutes}`;
+  return `${day} ${hours}: ${minutes}`;
 }
-
-let currentDate = document.querySelector("p.current-time");
-let now = new Date();
-
-currentDate.innerHTML = showDate(now);
 
 // Search bar & Displaying current weather
 function displayWeather(response) {
@@ -52,6 +31,9 @@ function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#weather-feature");
   temperatureElement.innerHTML = temperature;
+
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
