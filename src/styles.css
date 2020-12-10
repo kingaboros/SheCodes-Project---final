@@ -77,6 +77,10 @@ form {
   letter-spacing: 1px;
 }
 
+.current-location .weather-feature {
+  text-transform: capitalize;
+}
+
 :placeholder-shown {
   font-size: 17px;
   border: none;
