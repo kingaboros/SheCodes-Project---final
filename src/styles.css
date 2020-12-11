@@ -156,6 +156,23 @@ form {
   margin: 10px;
 }
 
+.forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+  color: rgb(75, 71, 71);
+  font-size: 13px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
 .coder {
   text-align: center;
   padding: 20px;
