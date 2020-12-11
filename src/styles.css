@@ -58,6 +58,14 @@ i {
 form {
   background: transparent;
 }
+
+.main-temperature img {
+  margin-right: 20px;
+  margin-left: -550px;
+  top: -1px;
+  height: 120px;
+  width: 120px;
+}
 .temperature {
   font-family: "Open Sans Condensed", sans-serif;
   color: #2e2727;
@@ -65,7 +73,7 @@ form {
   text-align: right;
 }
 
-.temperature .units {
+.main-temperature .units {
   position: relative;
   font-size: 20px;
   top: -43px;
@@ -121,7 +129,7 @@ form {
   padding: 10px 15px;
 }
 
-.fa-map-marker-alt {
+.location-button-icon {
   color: #b97272;
 }
 

@@ -50,7 +50,7 @@
               class="location-button buttons shadow-sm"
               id="location-button"
             >
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-map-marker-alt location-button-icon"></i>
             </button>
           </form>
         </div>
@@ -64,16 +64,18 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <div class="temperature">
-              <i class="fas fa-cloud"></i>
-              <span class="temperature" id="temperature"></span>
-              <small class="units">
-                <a href="#" id="celsius-link"> &#176;C</a> |<a
-                  href="#"
-                  id="fahrenheit-link"
-                  >&#176;F</a
-                >
-              </small>
+            <div class="clearfix main-temperature">
+              <img src="" alt="" id="icon" class="float-left" />
+              <div class="float-right">
+                <span class="temperature" id="temperature"></span>
+                <small class="units">
+                  <a href="#" id="celsius-link"> &#176;C</a> |<a
+                    href="#"
+                    id="fahrenheit-link"
+                    >&#176;F</a
+                  >
+                </small>
+              </div>
             </div>
           </div>
 

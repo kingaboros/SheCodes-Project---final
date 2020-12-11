@@ -30,9 +30,14 @@ function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#weather-feature");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = temperature;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
