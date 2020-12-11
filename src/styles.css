@@ -158,7 +158,8 @@ form {
 
 .forecast img {
   display: block;
-  margin: 0 auto;
+  top: -10px;
+  margin-left: -721px;
   height: 48px;
   width: 48px;
 }

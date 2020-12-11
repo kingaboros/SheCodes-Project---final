@@ -60,37 +60,24 @@ function displayWeather(response) {
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-  forecastElement.innerHTML = `
-  <div class="col-2">
-  <h3>${formatHours(forecast.dt * 1000)}</h3>
-  <img src="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png" alt="" />
-  <div class="weather-forecast-temperature">
-    <strong>${Math.round(
-      forecast.main.temp_max
-    )}&#176;</strong> |  ${Math.round(forecast.main.temp_min)}&#176;
-  </div>
-</div>`;
-
-  forecast = response.data.list[1];
-  forecastElement.innerHTML =
-    forecastElement.innerHTML +
-    `
-  <div class="col-2">
-  <h3>${formatHours(forecast.dt * 1000)}</h3>
-  <img src="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png" alt="" />
-  <div class="weather-forecast-temperature">
-    <strong>${Math.round(
-      forecast.main.temp_max
-    )}&#176;</strong> |  ${Math.round(forecast.main.temp_min)}&#176;
-  </div>
-</div>`;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+    <h3>${formatHours(forecast.dt * 1000)}</h3>
+    <img src="http://openweathermap.org/img/wn/${
+      forecast.weather[0].icon
+    }@2x.png" alt="" />
+    <div class="weather-forecast-temperature">
+      <strong>${Math.round(
+        forecast.main.temp_max
+      )}&#176;</strong> |  ${Math.round(forecast.main.temp_min)}&#176;
+    </div>
+  </div>`;
+  }
 }
 
 // API
