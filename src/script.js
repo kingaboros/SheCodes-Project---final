@@ -72,11 +72,11 @@ function displayForecast(response) {
       forecast.weather[0].icon
     }@2x.png" alt="" />
     <div class="weather-forecast-temperature">
-      <strong>${Math.round(
-        forecast.main.temp_max
-      )}&#176;</strong> |  ${Math.round(forecast.main.temp_min)}&#176;
-    </div>
-  </div>`;
+    <strong>${Math.round(
+      forecast.main.temp_max
+    )}&#176;</strong> |  ${Math.round(forecast.main.temp_min)}&#176;
+      </div>
+      </div>`;
   }
 }
 
@@ -105,8 +105,21 @@ form.addEventListener("submit", searchBar);
 function searchLocation(position) {
   let apiKey = "50a2cd96751f0c33cc1da997a8fb13b2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
+
+function showCurrentForecast(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("clik", showCurrentForecast);
 
 function showCurrentWeather(event) {
   event.preventDefault();
